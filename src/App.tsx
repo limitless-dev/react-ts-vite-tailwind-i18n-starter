@@ -3,17 +3,15 @@ import i18n from 'i18next';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 
-const availableLanguages = ['en', 'ar'];
-
 export function App() {
   return (
     <>
       <select
         className="w-28 rounded-md border bg-gray-900 p-2.5 text-white shadow-sm outline-none focus:border-indigo-600"
-        defaultValue="en"
+        defaultValue={i18n.language || 'en'}
         onChange={(e) => i18n.changeLanguage(e.target.value)}
       >
-        {availableLanguages.map((language) => (
+        {i18n.languages.map((language) => (
           <option key={language}>{language}</option>
         ))}
       </select>

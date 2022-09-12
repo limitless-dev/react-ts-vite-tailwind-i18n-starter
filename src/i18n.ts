@@ -13,19 +13,25 @@ i18n
     backend: {
       loadPath: '../locales/{{lng}}/{{ns}}.json',
     },
-    fallbackLng: navigator.language || 'en',
+    fallbackLng: i18n.language || 'en',
     ns: ['common'],
     debug: true,
     detection: {
-      order: ['queryString', 'cookie'],
-      cache: ['cookie'],
+      order: [
+        'cookie',
+        'navigator',
+        'localStorage',
+        'querystring',
+        'sessionStorage',
+        'htmlTag',
+        'path',
+        'subdomain',
+      ],
+      caches: ['cookie'],
     },
     interpolation: {
-      escapeValue: false,
+      escapeValue: true,
       formatSeparator: ',',
-    },
-    react: {
-      useSuspense: true,
     },
   });
 
