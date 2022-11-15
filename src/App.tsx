@@ -3,6 +3,7 @@ import i18n from 'i18next';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 
+const languages = ['en', 'ar'];
 export function App() {
   return (
     <>
@@ -11,7 +12,7 @@ export function App() {
         defaultValue={i18n.language || 'en'}
         onChange={(e) => i18n.changeLanguage(e.target.value)}
       >
-        {i18n.languages.map((language) => (
+        {languages.map((language) => (
           <option key={language}>{language}</option>
         ))}
       </select>

@@ -13,7 +13,7 @@ i18n
     backend: {
       loadPath: '../locales/{{lng}}/{{ns}}.json',
     },
-    fallbackLng: i18n.language || 'en',
+    fallbackLng: ['en', 'ar'],
     ns: ['common'],
     debug: true,
     detection: {
